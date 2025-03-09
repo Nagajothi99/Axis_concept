@@ -118,7 +118,7 @@
         /* Updated Section Styling */
         .section-title {
             text-align: center;
-            margin: 50px 0 30px;
+            margin: 30px 0 30px;
             color: #a64ca6;
             font-size: 32px;
             font-weight: 300;
@@ -143,6 +143,7 @@
         .location-card {
             flex: 1;
             min-width: 250px;
+            text-align: center;
             max-width: calc(25% - 20px);
             margin-bottom: 30px;
         }
@@ -156,14 +157,82 @@
         
         .location-card h3 {
             margin: 10px 0 5px;
-            color: #333;
+            color: #a64ca6;;
         }
+        .location-icon {
+            font-size: 48px;
+            color: #000000;
+            margin-bottom: 15px;
+            display: block;
+        }s
         
         .location-card p {
             margin: 0;
             color: #666;
             font-size: 14px;
         }
+     @media screen and (max-width: 768px) {
+    .location-card {
+        text-align: center;
+        margin: 0 auto 30px;
+        max-width: 100%;
+    }
+    
+    .location-icon {
+        margin: 0 auto 15px;
+        display: block;
+    }
+    
+    .location-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .location-card h3, 
+    .location-card p {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Center the location cards (from previous adjustment) */
+    .location-card {
+        text-align: center;
+        margin: 0 auto 30px;
+        max-width: 100%;
+    }
+    
+    .location-icon {
+        margin: 0 auto 15px;
+        display: block;
+    }
+    
+    .location-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .location-card h3, 
+    .location-card p {
+        text-align: center;
+    }
+    
+    /* New styles for premium projects */
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .project-info {
+        text-align: center;
+    }
+}
         
         /* Amenities Grid */
         .amenities-grid {
@@ -189,11 +258,14 @@
             margin-bottom: 10px;
         }
         .amenity-item > *:first-child {
-    font-size: 36px;
-    color: #000000 !important;
-    margin-bottom: 10px;
-    display: block;
-}
+            font-size: 36px;
+            color: #ffffff !important;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .amenity-item h3 {
+            color: #a64ca6;
+        }
         
         /* Projects Section */
         .projects-grid {
@@ -230,19 +302,7 @@
             margin: 0;
             color: #666;
         }
-
-        /* Footer */
-        .footer {
-            background: #333;
-            color: white;
-            display: flex;
-            justify-content: space-around;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-        .footer-column { width: 30%; }
-    </style>
+</style>        
 </head>
 <body>
     <div class="header">
@@ -252,19 +312,7 @@
 
     <div class="hero">AXIS OAKLYN <br>Where excellence meets Elegence</div>
 
-    <!-- Enquiry Form -->
-    <div class="enquiry-container">
-        <div class="enquiry-form">
-            <form id="enquiryForm">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="text" name="phone" placeholder="Phone Number" required>
-                    <button type="submit">Enquire</button>
-                </div>
-            </form>
-        </div>
-    </div>
+    
 
    <style>
     /* Carousel Styling */
@@ -364,25 +412,25 @@
         <div class="convenience-section">
             <div class="location-grid">
                 <div class="location-card">
-                    <img src="metro1.jpg" alt="Metro Station">
+                    <i class="fas fa-subway location-icon"></i>
                     <h3>Metro Station</h3>
                     <p>Experience seamless city commuting with a metro station nearby, ensuring quick and easy access to key destinations.</p>
                 </div>
                 
                 <div class="location-card">
-                    <img src="schools.jpg" alt="Kathipara Junction">
+                    <i class="fas fa-school location-icon"></i>
                     <h3>School</h3>
                     <p>Top-rated schools are just minutes away, ensuring a bright future for your children with quality education close to home</p>
                 </div>
                 
                 <div class="location-card">
-                    <img src="airport.jpg" alt="Chennai Airport">
+                    <i class="fas fa-plane location-icon"></i>
                     <h3>Airport</h3>
                     <p>Stay connected to the world with the airport just a short drive away, making travel effortless and stress-free.</p>
                 </div>
                 
                 <div class="location-card">
-                    <img src="Mall.jpg" alt="Guindy National Park">
+                    <i class="fas fa-building location-icon"></i>
                     <h3>Mall</h3>
                     <p>Enjoy ultimate convenience with a modern shopping mall nearby, offering retail stores, dining, and entertainment at your doorstep.</p>
                 </div>
@@ -393,47 +441,47 @@
         <h2 class="section-title">World-Class Amenities</h2>
         <div class="amenities-grid">
             <div class="amenity-item">
-                <div>🏊</div>
+                <i><img src="Swimming pool.png" alt="Swimming Pool" class="amenity-icon"></i>
                 <h3>Swimming Pool</h3>
                 <p>Temperature-controlled infinity pool</p>
             </div>
             
             <div class="amenity-item">
-                <span class="amenity-icon">🏋️</span>
+                <i><img src="fitness center.png" alt="fitness center" class="amenity-icon"></i>
                 <h3>Fitness Center</h3>
                 <p>State-of-the-art equipment & trainers</p>
             </div>
             
             <div class="amenity-item">
-                <span class="amenity-icon">🛡️</span>
+                <i><img src="24-7.png" alt="24/7 Security" class="amenity-icon"></i>
                 <h3>24/7 Security</h3>
                 <p>CCTV surveillance & guards</p>
             </div>
             <div class="amenity-item">
-                <span class="amenity-icon">🅿️</span>
+                <i><img src="parking.png" alt="Parking Facility" class="amenity-icon"></i>
                 <h3>Parking Facility</h3>
                 <p>Reserved spots with EV charging</p>
             </div>
             
             <div class="amenity-item">
-                <span class="amenity-icon">🏠</span>
+                <i><img src="clubhouse.png" alt="Clubhouse" class="amenity-icon"></i>
                 <h3>Clubhouse</h3>
                 <p>Exclusive social & recreational space</p>
             </div>
             
             <div class="amenity-item">
-                <span class="amenity-icon">🎾</span>
+                <i><img src="sports court.png" alt="Sports Courts" class="amenity-icon"></i>
                 <h3>Sports Courts</h3>
                 <p>Tennis, basketball & more</p>
             </div>
             
             <div class="amenity-item">
-                <span class="amenity-icon">🌳</span>
+                <i><img src="landscaped gardens.png" alt="Landscaped Gardens" class="amenity-icon"></i>
                 <h3>Landscaped Gardens</h3>
                 <p>Lush greenery & relaxation areas</p>
             </div>
            <div class="amenity-item">
-                <i><img src="play area.png" alt="Kids Play Area" class="amenity-icon"></i>
+                <i><img src="kids play area.png" alt="Kids Play Area" class="amenity-icon"></i>
                 <h3>Kids Play Area</h3>
                 <p>Safe & engaging playground</p>
            </div>
@@ -594,31 +642,250 @@
                 </div>
             </div>
         </div>
-    <div class="footer">
-    <div class="footer-column">
-        <h3>About Us</h3>
-        <p>We provide top-quality real estate services to help you find your dream home.</p>
-    </div>
-    <div class="footer-column">
-        <h3>Contact Us</h3>
-        <p>www.axisconcept.in<br>Phone: +8951396604<br>Email: axismarketing@axisconcept.in</p>
-    </div>
-    <div class="footer-column">
-        <h3>Follow Us</h3>
-        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-    </div>
 
-    <script>
-        document.getElementById('enquiryForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Thank you! Your enquiry has been submitted.');
+   <div class="footer">
+    <h2>Schedule A Site Visit</h2>
+    
+    <div class="footer-form">
+        <form id="footerEnquiryForm">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="phone" placeholder="Phone Number" required>
+                <button type="submit">Submit →</button>
+            </div>
+            <div class="privacy-terms">
+                <label class="checkbox-container">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    I have read and understood the <a href="#">Privacy Policy</a>. By registering here, 
+                    I agree to Axis Oaklyn's <a href="#">Terms & Conditions</a>.
+                </label>
+            </div>
+        </form>
+    </div>
+    
+    <div class="copyright">
+        COPYRIGHT 2025. AXIS OAKLYN. ALL RIGHTS RESERVED | <a href="#">PRIVACY POLICY</a>
+    </div>
+</div>
+
+<style>
+    /* Footer with enquiry form styles */
+    .footer {
+        background: #333; /* Dark footer background */
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer h2 {
+        font-size: 32px;
+        font-weight: 300;
+        margin-bottom: 30px;
+        color: white;
+    }
+    
+    .footer-form {
+        width: 100%;
+        max-width: 1000px;
+    }
+    
+    .footer .form-group {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    /* Fixed input styling */
+    .footer input[type="text"],
+    .footer input[type="email"] {
+        padding: 12px 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 25px;
+        background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+        color: white;
+        width: 100%;
+        max-width: 220px;
+    }
+    
+    .footer input::placeholder {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .footer button {
+        background: white;
+        color: #333;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+    
+    .privacy-terms {
+        color: white;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    
+    .privacy-terms a {
+        color: white;
+        text-decoration: underline;
+    }
+    
+    .checkbox-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        cursor: pointer;
+    }
+    
+    .checkbox-container input[type="checkbox"] {
+        width: auto;
+        margin-top: 3px;
+    }
+    
+    .copyright {
+        margin-top: 30px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .copyright a {
+        color: white;
+        text-decoration: underline;
+    }
+    
+    /* Mobile responsiveness for the footer form */
+    @media screen and (max-width: 768px) {
+        .footer .form-group {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer input[type="text"],
+        .footer input[type="email"],
+        .footer button {
+            max-width: 100%;
+            width: 100%;
+        }
+        
+        .checkbox-container {
+            justify-content: center;
+            text-align: left;
+        }
+    }
+
+    /* Custom popup styles */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        z-index: 1000;
+    }
+    
+    .popup-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 400px;
+        width: 80%;
+    }
+    
+    .popup h3 {
+        color: #a64ca6;
+        margin-top: 0;
+    }
+    
+    .popup p {
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .close-popup {
+        background-color: #a64ca6;
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+
+<!-- Adding the popup element -->
+<div id="thankYouPopup" class="popup">
+    <div class="popup-content">
+        <h3>Thank You!</h3>
+        <p>Your enquiry has been submitted successfully. Our team will contact you shortly.</p>
+        <button class="close-popup" id="closePopup">Close</button>
+    </div>
+</div>
+
+<script>
+    // Wait for the DOM to fully load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get references to elements
+        const footerForm = document.getElementById('footerEnquiryForm');
+        const popup = document.getElementById('thankYouPopup');
+        const closePopupBtn = document.getElementById('closePopup');
+        
+        // Add event listener for form submission
+        if (footerForm) {
+            footerForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+                
+                // Show the popup
+                popup.style.display = 'block';
+                
+                // Clear the form fields (optional)
+                footerForm.reset();
+            });
+        }
+        
+        // Add event listener for closing the popup
+        if (closePopupBtn) {
+            closePopupBtn.addEventListener('click', function() {
+                popup.style.display = 'none';
+            });
+        }
+        
+        // Also close the popup when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target == popup) {
+                popup.style.display = 'none';
+            }
         });
-    </script>
-   
+    });
+    
+    // And don't forget about the top form as well
+    const topForm = document.getElementById('enquiryForm');
+    if (topForm) {
+        topForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default submission
+            document.getElementById('thankYouPopup').style.display = 'block';
+            topForm.reset();
+        });
+    }
+</script>   
    
 </body>
 </html>
